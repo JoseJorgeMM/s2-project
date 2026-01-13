@@ -1,0 +1,3 @@
+timestamp,subgroup_id,n,mean,S2,state_label,event_flag,machine
+# Example row:
+2024-05-01T08:00:00,sg0001,5,10.12,0.342,in-control,0,M1

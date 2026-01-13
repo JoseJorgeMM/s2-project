@@ -1,0 +1,20 @@
+{
+  "analytical": {
+    "mode": "analytical",
+    "best_k1": 4.416830161414295,
+    "best_k2": 1.9171074239222503,
+    "achieved_ARL1": 31.839664656996483,
+    "achieved_ARL0": 392.26321324151104,
+    "achieved_ASN": 5.899449207389537,
+    "trials": 50
+  },
+  "surrogate": {
+    "mode": "surrogate",
+    "best_k1": 4.768112690105558,
+    "best_k2": 1.1916817952132537,
+    "achieved_ARL1": 35.07806533132569,
+    "achieved_ARL0": 542.7547070539018,
+    "achieved_ASN": 7.095585942197817,
+    "trials": 50
+  }
+}

@@ -1,0 +1,684 @@
+Full Terms & Conditions of access and use can be found at
+http://www.tandfonline.com/action/journalInformation?journalCode=cjas20
+Download by: [79.170.55.162] Date: 18 September 2015, At: 01:25
+Journal of Applied Statistics
+ISSN: 0266-4763 (Print) 1360-0532 (Online) Journal homepage: http://www.tandfonline.com/loi/cjas20
+A new S2 control chart using repetitive sampling
+Muhammad Aslam, Nasrullah Khan & Chi-Hyuck Jun
+To cite this article: Muhammad Aslam, Nasrullah Khan & Chi-Hyuck Jun (2015) A new S2
+control chart using repetitive sampling, Journal of Applied Statistics, 42:11, 2485-2496, DOI:
+10.1080/02664763.2015.1043861
+To link to this article:  http://dx.doi.org/10.1080/02664763.2015.1043861
+Published online: 12 May 2015.
+Submit your article to this journal 
+Article views: 32
+View related articles 
+View Crossmark data
+
+Journal of Applied Statistics, 2015
+V ol. 42, No. 11, 2485–2496, http://dx.doi.org/10.1080/02664763.2015.1043861
+A new S2 control chart using
+repetitive sampling
+Muhammad Aslama∗, Nasrullah Khanb and Chi-Hyuck Junc
+aDepartment of Statistics, Faculty of Sciences, King Abdulaziz University, Jeddah 21551, Saudi Arabia;
+bDepartment of Statistics, National College of Business Administration and Economics, Lahore, Pakistan;
+cDepartment of Industrial and Management Engineering, POSTECH, Pohang 790-784, Republic of Korea
+(Received 25 March 2014; accepted 19 April 2015)
+An e wS2 control chart is presented for monitoring the process variance by utilizing a repetitive sampling
+scheme. The double control limits called inner and outer control limits are proposed, whose coefﬁcients
+are determined by considering the average run length (ARL) and the average sample number when the
+process is in control. The proposed control chart is compared with the existing Shewhart S2 control chart
+in terms of the ARLs. The result shows that the proposed control chart is more efﬁcient than the existing
+control chart in detecting the process shift.
+Keywords: repetitive sampling; control chart; average run length; process shift
+1. Introduction
+The control charts are the statistical tools widely used in industries to monitor the manufacturing
+process. Although the latest machinery is available to a manufacturer, there is a chance of varia-
+tion in the process due to several factors. When the process is out of control, industrial engineers
+are required to remove the cause of the variation in time. Therefore, researchers are trying to
+explore new control charts so that the out-of-control signal can be given as soon as the process
+is going out of control. Shewhart originally developed the control chart schemes to monitor the
+process, but the Shewhart control charts are known to be useful to detect large shifts quickly.
+Traditionally, the Shewhart-type control charts such asR, S and S
+2 control charts are popularly
+used for monitoring the process variance. Research on improving the performance of these con-
+trol charts is still ongoing. Khoo [12] proposed an S
+2 control chart based on the double sampling
+approach. Zhang et al. [26] presented the statistical design of the S2 chart. Lee [15] designed the
+adaptive R charts by considering the variable parameters of the chart. Lee et al. [16] presented
+the designing method of S control charts by combining double sampling and variable sampling
+*Corresponding author. Email: aslam_ravian@hotmail.com
+c⃝ 2015 Taylor & Francis
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+2486 M. Aslam et al.
+interval (VSI) schemes. Guo and Wang [9] presented the designing of the S2 chart providing an
+unbiased estimator of the average run length (ARL) when in-control variance is estimated.
+Lots of other types of control charts for controlling the variability have been developed. Chen
+[7] discussed the ARL distributions of different variability charts. David [ 8] discussed early
+sample measures of variability. Khoo [11 ] proposed the modiﬁed S chart for process variance.
+Huang and Chen [ 10] designed a synthetic control chart for monitoring the process standard
+deviation. Riaz [20] proposed a dispersion control chart called ‘Q-chart’. Riaz and Saghir [ 21]
+designed a mean-deviation-based control chart. Mahmoud et al. [17] discussed the estimation of
+standard deviation in control chart applications. Rakitzis and Antzoulakos [ 19] worked on the
+improvement of the one-sided S control chart. Schoonhoven et al. [22] designed a control chart
+for a process standard deviation when the estimation of parameters is needed. Kuo and Lee [13]
+developed the design of an adaptive standard deviation control chart. Zafar et al. [24] proposed
+the progressive variance control chart for monitoring process dispersion. Zhang [25] designed the
+improved R and S control chart for monitoring process variance. Ahmad et al. [1,2] developed
+an efﬁcient median chart.
+The main purpose of this paper is to introduce the repetitive sampling approach to developing a
+new control chart. Repetitive sampling was originally proposed by Sherman [23] for developing
+an attributes acceptance sampling plan. The operation of the repetitive sampling is similar to the
+sequential sampling scheme. Later on, according to Balamurali and Jun [ 6], repetitive sampling
+is applied to develop more efﬁcient variables acceptance sampling plans. The idea of repetitive
+sampling is different from the double sampling approach or the VSI approach. In a double sam-
+pling or a repetitive sampling scheme, a second sample is taken if the decision cannot be made
+on the ﬁrst sample. Usually, the double sampling scheme is based on four parameters and so it is
+difﬁcult to apply from an administrative point of view. On the other hand, the repetitive sampling
+scheme is simpler to apply because it is based on two parameters. The repetitive sampling scheme
+is also different from the VSI scheme in that the latter adjusts the sampling interval instead of
+the control limits. Therefore, the control charts based on the repetitive sampling scheme will be
+different from the existing control charts in the literature. Recently, Aslamet al. [3,4] proposed a
+t-control chart using repetitive sampling and Ahmad et al. [1,2] designed the X -bar control chart
+based on the process capability index using repetitive sampling and proved its efﬁciency. Azam
+et al. [5] designed a hybrid EWMA chart using repetitive sampling for normal distribution. Lee
+et al. [14] proposed a control chart using an auxiliary variable and repetitive sampling to detect
+the process mean. Aslam et al. [3,4]
+designed some attribute and variable control charts using
+repetitive sampling for monitoring the process mean.
+By exploring the literature, we note thatS or S2 control charts are available based on the single
+and double sampling approaches. No attempt has been made to propose S or S2 control charts
+using the repetitive sampling scheme. In this paper, we expect that the S2 control chart using
+repetitive sampling will be more efﬁcient than the S2 control chart based on the single sampling
+scheme. The rest of the paper is organized as follows: the designing of the proposed control
+chart is given in Section 2. The performance comparison with the Shewhart S
+2 chart is given in
+Section 3 and a simulation study using synthetic data is given in Section 4. Some concluding
+remarks are given in the last section.
+2. Designing of new S2 control chart
+We proposed the following S2 control chart using repetitive sampling.
+Step 1 Take a sample of size n. Calculate S2 from the sample data.
+Step 2 Declare the process as out-of-control if S2 ≥ UCL1 or S2 ≤ LCL1 (UCL1 and LCL1
+are called the outer control limits). Declare the process as in-control if LCL 2 ≤ S2 ≤ UCL2
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+Journal of Applied Statistics 2487
+(UCL2 and LCL2 are called the inner control limits). Otherwise, go to Step 1 and repeat the
+process.
+The rationale of the proposed control chart is that the decision can be made from the ﬁrst
+sample when the evidence is sufﬁcient but it may be better to postpone when the evidence is not
+enough.
+These four control charts’ limits for the proposed control chart are given as follows when σ2
+is known. The outer control limits are given by
+UCL1 = σ2 + k1
+√
+2(σ2)2
+(n − 1),L C L 1 = σ2 − k1
+√
+2(σ2)2
+(n − 1),
+where k1 is a constant to be determined. The inner control limits are
+UCL2 = σ2 + k2
+√
+2(σ2)2
+(n − 1),L C L 2 = σ2 − k2
+√
+2(σ2)2
+(n − 1),
+where k2 is a constant to be determined.
+The probability that the process is declared to be out of control based on a single sample is
+P(1)
+out = P(S2 ≥ UCL1) + P(S2 ≤ LCL1).( 1)
+Note that (n − 1)S2/σ2 follows the chi-square distribution with degree of freedomn − 1i ft h e
+process is in control. Let G be the distribution function (df) of such a distribution. Then, when
+the process is in control,
+P(S2 ≥ UCL1) = 1 − G
+((n − 1)UCL1
+σ2
+)
+= 1 − G
+(
+(n − 1)
+(
+1 + k1
+√
+2
+n − 1
+))
+.
+Similarly,
+P(S2 ≤ LCL1) = G
+(
+(n − 1)
+(
+1 − k1
+√
+2
+n − 1
+))
+.
+So, ﬁnally Equation (1) can be rewritten as follows when the process is in control,
+P(1)
+out = 1 + G
+(
+(n − 1)
+(
+1 − k1
+√
+2
+n − 1
+))
+− G
+(
+(n − 1)
+(
+1 + k1
+√
+2
+n − 1
+))
+.( 2 )
+The probability that the process is declared to be in-control based on a single sample can be
+calculated as follows:
+P(1)
+in = P(LCL2 ≤ S2 ≤ UCL2) = P(S2 ≤ UCL2) − P(S2 ≤ LCL2),
+and when the process is in control
+P(1)
+in = G
+(
+(n − 1)
+(
+1 − k2
+√
+2
+n − 1
+))
+− G
+(
+(n − 1)
+(
+1 + k2
+√
+2
+n − 1
+))
+.( 3 )
+The probability of repetition can be calculated as follows:
+Prep = P{LCL1 ≤ S2 < LCL2}+ P{UCL2 < S2 ≤ UCL1}.
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+2488 M. Aslam et al.
+So, when the process is in control
+Prep =
+{
+G
+(
+(n − 1)
+(
+1 − k1
+√
+2
+n − 1
+))
+− G
+(
+(n − 1)
+(
+1 − k2
+√
+2
+n − 1
+))}
++
+{
+G
+(
+(n − 1)
+(
+1 + k2
+√
+2
+n − 1
+))
+− G
+(
+(n − 1)
+(
+1 + k1
+√
+2
+n − 1
+))}
+.
+(4)
+Therefore, the probability the process is declared to be out of control for the proposed plan when
+the process is actually in control is given as follows:
+Pout = 1 + G((n − 1)( 1 − k1
+√ 2/n − 1)) − G((n − 1)(1 + k1
+√ 2/n − 1))
+1 − [{G((n − 1)(1 − k1
+√ 2/n − 1)) − G((n − 1)(1 − k2
+√ 2/n − 1))}
++{G((n − 1)(1 + k2
+√ 2/n − 1)) − G((n − 1)(1 + k1
+√ 2/n − 1))}].
+(5)
+The average sample number (ASN) for the proposed control chart when the process is in
+control is given by
+ASN0 = n
+1 − [{G((n − 1)(1 − k1
+√ 2/n − 1)) − G((n − 1)(1 − k2
+√ 2/n − 1))}
++{G((n − 1)(1 + k2
+√ 2/n − 1)) − G((n − 1)(1 + k1
+√ 2/n − 1))}]
+.( 6 )
+Now we derive the equations when the process is shifted. Suppose that the process variance
+has been shifted from σ2 to σ2
+1 = cσ2 for a constant c while the mean remains the same. Now,
+(n − 1)S2/(cσ2) follows the chi-square distribution with degree of freedom n − 1.
+The probability that the process is declared to be out of control under variance shift is derived
+as follows.
+P(1)
+out,shift = P(S2 ≥ UCL1|σ2
+1 ) + P(S2 ≤ LCL1|σ2
+1 ),
+= 1 + G
+(
+n − 1
+c
+(
+1 − k1
+√
+2
+n − 1
+))
+− G
+(
+n − 1
+c
+(
+1 + k1
+√
+2
+n − 1
+))
+.
+(7)
+Hence, the probability that the process is declared as out-of-control when the process is shifted
+can be obtained as follows:
+Pout,shift = 1 + G((n − 1/c)(1 − k1
+√ 2/n − 1)) − G((n − 1/c)(1 + k1
+√ 2/n − 1))
+1 − [{G((n − 1/c)(1 − k1
+√ 2/n − 1)) − G((n − 1/c)(1 − k2
+√ 2/n − 1))}
++{G((n − 1/c)(1 + k2
+√ 2/n − 1)) − G((n − 1/c)(1 + k1
+√ 2/n − 1))}]
+.( 8 )
+The ARL when the process is under control is given as
+ARL0 = 1
+Pout
+.( 9)
+The ARL when the process is out of control is given as
+ARL1 = 1
+Pout,shift
+. (10)
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+Journal of Applied Statistics 2489
+Table 1. Average run lengths of the proposed control charts when ARL0 = 200.
+n = 4 n = 5 n = 6 n = 7
+k1 = 4.03985 k1 = 3.91435 k1 = 3.79672 k1 = 3.6298
+ck 2 = 2.39055 k2 = 1.39822 k2 = 1.38838 k2 = 2.7954
+c ARL ASN ARL ASN ARL ASN ARL ASN
+1.0 200.00 4.11 200.00 5.49 200.00 6.68 200.00 7.08
+1.1 114.78 4.15 106.35 5.66 101.50 6.90 101.18 7.12
+1.2 72.27 4.20 62.80 5.84 57.74 7.14 57.87 7.18
+1.3 48.86 4.25 40.21 6.02 35.86 7.40 36.34 7.25
+1.4 34.94 4.30 27.44 6.21 23.88 7.66 24.54 7.32
+1.5 26.13 4.35 19.73 6.39 16.82 7.91 17.56 7.39
+1.6 20.28 4.40 14.80 6.57 12.42 8.15 13.16 7.46
+1.7 16.22 4.45 11.51 6.73 9.53 8.38 10.25 7.53
+1.8 13.30 4.50 9.22 6.88 7.56 8.58 8.24 7.60
+1.9 11.15 4.54 7.57 7.02 6.17 8.76 6.80 7.66
+2 9.51 4.58 6.36 7.13 5.16 8.90 5.75 7.71
+3 3.60 4.81 2.34 7.49 1.94 9.11 2.21 7.89
+4 2.31 4.82 1.60 7.14 1.39 8.40 1.53 7.75
+Table 2. Average run lengths of the proposed control charts when ARL0 = 300.
+n = 4 n = 5 n = 6 n = 7
+k1 = 4.40671 k1 = 4.18449 k1 = 4.05323 k1 = 3.93845
+k2 = 2.09285 k2 = 2.40599 k2 = 1.95393 k2 = 2.04327
+c ARL ASN ARL ASN ARL ASN ARL ASN
+1 300.00 4.17 300.00 5.13 300.00 6.28 300.00 7.28
+1.1 164.55 4.23 156.96 5.19 148.46 6.41 142.78 7.43
+1.2 99.67 4.30 91.68 5.27 82.84 6.57 77.32 7.61
+1.3 65.16 4.38 58.26 5.35 50.68 6.73 46.21 7.80
+1.4 45.24 4.45 39.55 5.43 33.32 6.90 29.84 8.01
+1.5 32.96 4.53 28.31 5.52 23.22 7.08 20.50 8.22
+1.6 24.98 4.60 21.16 5.60 16.97 7.25 14.81 8.43
+1.7 19.56 4.68 16.38 5.68 12.90 7.42 11.16 8.63
+1.8 15.75 4.75 13.07 5.76 10.13 7.58 8.72 8.81
+1.9 12.97 4.81 10.69 5.84 8.19 7.72 7.01 8.98
+2 10.90 4.87 8.94 5.91 6.78 7.85 5.79 9.13
+3 3.76 5.23 3.07 6.27 2.32 8.30 2.02 9.50
+4 2.33 5.25 1.95 6.23 1.55 7.95 1.41 8.96
+The coefﬁcients k1 and k2 for the proposed control chart can be determined by considering the
+target ARL0, when the process is in control while keeping the ASN0 in Equation (6) as minimal
+as possible.
+We presented the control coefﬁcients in Table 1 for various sample sizes (n ) when ARL 0 =
+200, where the ARLs as well as ASNs are reported according to various shift constants (c’s). We
+used n = 4, 5, 6, 7 and c from 1.0 to 2.0 with the increment of 0.1. Table 2 is the case when
+ARL0 = 300 and Table 3 is the case when ARL0 = 375.
+From Tables 1–3, we note the following trends in the proposed control charts:
+(1) When c increases from 1.1 to 2.0, we note the decreasing trend in ARL1 in Tables 1–3.
+(2) As n changes from 4 to 7 while other values remain unchanged, we note the decreasing trend
+in ARL1.
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+2490 M. Aslam et al.
+Table 3. Average run lengths of the proposed control charts when ARL0 = 370.
+n = 4 n = 5 n = 6 n = 7
+k1 = 4.57769 k1 = 4.37021 k1 = 4.19825 k1 = 4.09419
+k2 = 2.43202 k2 = 1.92006 k2 = 2.24743 k2 = 1.8737
+c ARL ASN ARL ASN ARL ASN ARL ASN
+1 370.00 4.11 370.00 5.26 370.00 6.19 370.00 7.36
+1.1 199.90 4.16 187.55 5.36 180.28 6.29 171.14 7.55
+1.2 119.63 4.21 106.51 5.48 99.40 6.41 90.40 7.76
+1.3 77.45 4.27 66.01 5.62 60.23 6.54 52.86 8.01
+1.4 53.33 4.33 43.81 5.75 39.30 6.67 33.47 8.26
+1.5 38.59 4.39 30.73 5.89 27.20 6.82 22.59 8.52
+1.6 29.08 4.45 22.55 6.03 19.76 6.96 16.07 8.78
+1.7 22.65 4.51 17.17 6.16 14.94 7.10 11.94 9.03
+1.8 18.14 4.57 13.50 6.29 11.68 7.24 9.21 9.27
+1.9 14.88 4.63 10.90 6.41 9.39 7.36 7.33 9.48
+2 12.46 4.68 9.01 6.52 7.74 7.48 6.00 9.66
+3 4.16 5.01 2.91 7.04 2.53 7.97 2.00 10.11
+4 2.52 5.07 1.84 6.91 1.65 7.74 1.38 9.40
+(3) As ARL 0 changes from 200 to 375, we note the increasing trend in ARL1.
+(4) The values of ASN are almost similar to the sample size in all cases.
+Example. Let us consider an example for automobile engine piston rings taken from Mont-
+gomery [18 ]. Each subgroup consists of ﬁve piston rings. Suppose that the proposed control
+chart is used by specifying ARL 0 = 370. Then, from Table 3 we determined the control chart
+coefﬁcients as k1 = 4.37021 and k2 = 1.92006. The value of S2 is 0.000100627. The four con-
+trol limits using sample estimates of the proposed chart for automobile engine piston rings data
+are computed as follows. First, the outer control limits are given by
+UCL1 = S2 + k1
+√
+2(S2)2/(n − 1)
+= 0.000100627 + 4.37021
+√
+2(0.000100627)2/4 = 0.000411584,
+LCL1 = S2 − k1
+√
+2(S2)2/(n − 1)
+= 0.000100627 − 4.37021
+√
+2(0.000100627)2/4 =− 0.000210331,
+UCL2 = S2 + k2
+√
+2(S2)2/(n − 1)
+= 0.000100627 + 1.92006
+√
+2(0.000100627)2/4 = 0.000237247,
+LCL2 = S2 − k2
+√
+2(S2)2/(n − 1)
+= 0.000100627 − 1.92006
+√
+2(0.000100627)2/4 =− 0.00035992.
+The proposed control for this data is shown in Figure 1.
+The values of S2 are plotted along with four control limits in Figure 1. From Figure 1,w es e e
+that there have been several cases requiring repetitive sampling such as the subgroups 3 and 6.
+But it turns out that the process is in control.
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+Journal of Applied Statistics 2491
+Figure 1. The control chart for real data.
+3. Comparative study
+In this section, we will compare the efﬁciency of the proposed control chart with the existing
+S2 control charts. The control chart with smaller values of ARLs is said to be more efﬁcient. So,
+the efﬁciency of charts will be discussed in terms of ARLs.
+3.1 Proposed S2 control chart versus Shewhart S 2 chart
+The traditional Shewhart S2 control chart is based on single sampling and has two control limits.
+The proposed S2 control chart is the extension of the Shewhart S2 control chart because the
+proposed chart becomes the Shewhart S2 control chart when k1 = k2. We presented two tables
+for the comparison purpose. Table 4 is given when ARL 0 = 300 and Table 5 is given when
+ARL0 = 375. We selected these values of ARL0 as commonly used in the area of quality control.
+From Tables 4 and 5, we note that the values of ARL 1 are smaller in the proposed control
+charts as compared to the ShewhartS2 control chart. For example, when ARL0 = 370, n = 5 and
+c = 1.5 from Table5, we note ARL1 = 30.7 from the proposed control chart while ARL1 = 35.1
+from the existing Shewhart control chart. It is noted that the difference between the proposed
+chart and the Shewhart S2 control chart is increased as n is increased. The difference of the
+ARL1 values between two control charts increases when the process shifts increase.
+3.2 Proposed chart versus chart by Zhang et al. [26]
+Now, the ARL comparison of the proposed chart and the chart by Zhang et al. [26] is presented.
+Again, the same speciﬁed parametric values are taken for the comparison purpose. It can be
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+2492 M. Aslam et al.
+Table 4. Comparison of the proposed control chart with Shewhart S2 chart when ARL0 = 300.
+n = 4 n = 5 n = 6 n = 7
+Proposed
+with
+k1 = 4.406
+Shewhart
+with
+k = 4.370
+Proposed
+with
+k1 = 4.184
+Shewhart
+with
+k = 4.163
+Proposed
+with
+k1 = 4.053
+Shewhart
+with
+k = 4.019
+Proposed
+with
+k1 = 3.938
+Shewhart
+with
+k = 3.910
+ck 2 = 2.092 k2 = 2.405 k2 = 1.953 k2 = 2.043
+1 300.00 300.00 300.00 300.00 370.00 300.00 300.00 300.00
+1.1 164.55 167.74 156.96 159.30 180.28 152.31 142.78 146.33
+1.2 99.67 103.63 91.68 94.55 99.40 87.35 77.32 81.40
+1.3 65.16 69.11 58.26 61.10 60.23 54.97 46.21 50.05
+1.4 45.24 48.93 39.55 42.20 39.30 37.19 29.84 33.26
+1.5 32.96 36.34 28.31 30.72 27.20 26.64 20.50 23.51
+1.6 24.98 28.05 21.16 23.34 19.76 19.98 14.81 17.45
+1.7 19.56 22.35 16.38 18.36 14.94 15.57 11.16 13.49
+1.8 15.75 18.29 13.07 14.87 11.68 12.51 8.72 10.77
+1.9 12.97 15.29 10.69 12.34 9.39 10.32 7.01 8.85
+2 10.90 13.03 8.94 10.44 7.74 8.70 5.79 7.43
+3 3.76 4.85 3.07 3.82 2.53 3.17 2.02 2.72
+4 2.33 3.03 1.95 2.42 1.65 2.04 1.41 1.79
+Table 5. Comparison of the proposed control chart with Shewhart S2 chart when ARL0 = 370.
+n = 4 n = 5 n = 6 n = 7
+Proposed
+with
+k1 = 4.57
+Shewhart
+with
+k = 4.553
+Proposed
+with
+k1 = 4.370
+Shewhart
+with
+k = 4.330
+Proposed
+with
+k1 = 4.198
+Shewhart
+with
+k = 4.175
+Proposed
+with
+k1 = 4.094
+Shewhart
+with
+k = 4.05862
+ck 2 = 2.432 k2 = 1.920 k2 = 2.247 k2 = 1.873
+1 370.00 370.00 370.00 370.00 370.00 370.00 370.00 370.00
+1.1 199.90 202.74 187.55 192.35 180.28 183.76 171.14 176.40
+1.2 119.63 123.17 106.51 112.18 99.40 103.48 90.40 96.29
+1.3 77.45 80.98 66.01 71.42 60.23 64.12 52.86 58.27
+1.4 53.33 56.65 43.81 48.71 39.30 42.81 33.47 38.20
+1.5 38.59 41.63 30.73 35.07 27.20 30.32 22.59 26.68
+1.6 29.08 31.84 22.55 26.39 19.76 22.52 16.07 19.61
+1.7 22.65 25.17 17.17 20.59 14.94 17.39 11.94 15.02
+1.8 18.14 20.44 13.50 16.55 11.68 13.87 9.21 11.90
+1.9 14.88 16.99 10.90 13.64 9.39 11.36 7.33 9.70
+2 12.46 14.39 9.01 11.48 7.74 9.52 6.00 8.10
+3 4.16 5.16 2.91 4.05 2.53 3.34 2.00 2.85
+4 2.52 3.17 1.84 2.51 1.65 2.11 1.38 1.85
+seen that the proposed control chart provides a smaller value of ARLs as compared to the chart
+by Zhang et al. [26]. For example, when c = 1.5, r0 = 370 and n = 5, from Table 3, we note
+ARL1 = 30.70 from the proposed control chart while ARL 1 = 70 from Zhang et al. [26]. Sim-
+ilarly, when c = 2, r0 = 370 and n = 5, from Table 3, we note ARL 1 = 9 from the proposed
+control chart while ARL1 = 13 from the Zhang et al. [26] chart. So, the proposed chart is more
+efﬁcient than the Zhang et al. [26] chart in detecting the shift in the process.
+4. Simulation study
+In this section, the performance of the proposed control chart is demonstrated with the help of
+simulated data. The in-control process is assumed to follow the normal distribution with μ = 0
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+Journal of Applied Statistics 2493
+Table 6. The simulated data.
+Sample
+Subgroup no. 1 2 3 4 5 ¯X S2
+1 0.822203 − 2.90516 − 2.77059 2.698414 3.342245 0.237422 8.740587
+2 3.488448 0.747544 0.803628 − 0.91268 0.45191 0.915769 2.55449
+3 1.384665 0.837499 − 0.86015 2.304064 − 2.04822 0.323571 3.08475
+4 1.37076 0.46269 2.25603 2.31747 − 1.67078 0.947234 2.71467
+5 1.79087 − 5.55334 − 3.08325 3.88745 0.104013 − 0.57085 14.26173
+6 − 0.60775 2.014371 2.564402 0.558486 1.959444 1.29779 1.683309
+7 − 1.19902 0.826443 1.940512 3.911588 − 0.50526 0.994854 4.123343
+8 0.214864 0.104219 − 1.43745 − 1.14172 0.392258 − 0.37356 0.720726
+9 0.271539 − 0.73651 2.8615 0.843192 0.939923 0.83593 1.726222
+10 − 0.7972 − 0.51352 0.986834 2.304587 2.662675 0.928675 2.490463
+11 1.468094 0.719437 − 4.39037 − 2.9949 − 1.40409 − 1.32036 6.043072
+12 − 0.48791 0.463019 3.000626 4.350904 − 0.68374 1.32858 5.00711
+13 − 4.53169 2.79933 1.41939 − 2.26276 − 1.66621 − 0.84839 8.671158
+14 − 2.50991 − 0.53077 0.161477 − 1.81875 1.917606 − 0.55607 3.011613
+15 − 0.89232 − 1.56657 0.547575 3.241542 6.672298 1.600505 11.44232
+16 − 0.95952 1.36188 − 0.30387 − 1.94316 0.491244 − 0.27069 1.629648
+17 − 0.95196 − 4.45544 2.858189 1.730991 − 1.22111 − 0.40786 8.145512
+18 − 2.71638 − 1.20544 − 4.42638 3.2106 − 2.03404 − 1.43433 8.145861
+19 − 0.3692 − 1.9095 1.412618 5.499141 − 1.7966 0.567293 9.409297
+20 − 1.99763 3.468787 0.79211 − 5.43292 0.189963 − 0.59594 11.10685
+21 − 2.42559 2.948568 0.008251 1.097331 3.094154 0.944542 5.223687
+22 1.73353 3.04432 1.59248 3.3143 − 5.25616 0.885693 12.37464
+23 − 1.52097 1.422285 1.039017 − 0.08855 2.272255 0.624808 2.158715
+24 − 0.95748 − 0.8025 − 0.22106 − 0.31856 1.604996 − 0.13892 1.047662
+25 − 0.06265 5.307733 0.594644 2.243393 − 1.55092 1.306441 6.858445
+26 − 0.886 − 3.0917 − 3.41418 − 1.04451 1.500224 − 1.38723 3.929958
+27 − 1.89427 − 3.43582 − 0.88469 − 5.634 − 0.34561 − 2.43888 4.57415
+28 1.80112 1.22569 2.56498 − 4.314 2.09117 0.673792 8.009777
+29 − 1.13508 1.174176 − 0.13989 1.889322 1.739027 0.705511 1.697921
+30 1.61897 − 1.13753 5.00347 − 3.97006 2.07253 0.717474 11.60817
+31 3.30445 − 4.44497 1.28714 − 2.2146 − 3.68088 − 1.14977 11.04433
+32 0.791115 − 1.41377 6.180332 − 1.50607 − 3.19536 0.17125 13.28826
+33 1.50802 5.520017 1.574205 − 2.77276 0.656529 1.297202 8.732104
+34 − 1.74099 − 1.486 1.5429 3.66359 − 1.77234 0.041432 6.043566
+35 − 0.50634 − 4.39024 2.841474 0.801154 2.02469 0.154147 8.056748
+36 1.070506 − 3.99678 3.701629 0.418484 5.162201 1.271207 12.39148
+37 2.845333 2.038118 5.634573 − 0.18415 3.983728 2.86352 4.725882
+38 − 1.31666 1.9464 − 1.83967 − 3.16129 1.97661 − 0.47892 5.4151
+39 − 1.54519 − 0.09658 − 1.85159 4.265676 − 1.23559 − 0.09266 6.376273
+40 3.51314 − 3.78166 6.43307 1.91043 − 2.73592 1.067814 18.36535
+and σ2 = 4. The ﬁrst 10 observations are generated from the in-control process and the next 30
+observations are generated with the shifted process, which follows a normal distribution with
+μ = 0 and variance of 1.5 σ2 = 6. The data are reported in Table 6.
+For this simulation study, let ARL0 = 370 and n = 5. The four control limits for the simulated
+data are as follows:
+UCL1 = 16.36, LCL 1 =− 8.36, UCL 2 = 9.43 and LCL 2 =− 1.43.
+The values of S2 are also reported in Table 6. The values of S2 are plotted on the control chart
+in Figure 3. From Figure 2, it can be seen that the proposed chart detects the shift at the 39th
+value. The values of S2 are also plotted on the traditional Shewhart S2 control chart in Figure 3,
+which could not detect the shift in the process. So, the proposed control chart has the ability to
+detect shift quickly as compared to the existing control chart.
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+2494 M. Aslam et al.
+Figure 2. The proposed S2 control chart for the simulated data.
+Figure 3. Shewhart S2 control chart for the simulated data.
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+Journal of Applied Statistics 2495
+5. Conclusion
+In this paper, a new S2 control chart under the repetitive sampling scheme is presented for mon-
+itoring the process variance. The tables are given for the practical application of the proposed
+control chart in the industries. The proposed control chart is more efﬁcient than the Shewhart
+S2 control chart in terms of the ARL as the former declares out-of-control more quickly. It is
+strongly suggested to use the proposed control chart in the industry to monitor the process vari-
+ability instead of the existing control charts because it is more efﬁcient and easier to apply. The
+proposed repetitive sampling scheme can be applied to other types of control charts to improve
+the performance of early detection of the process shift. Still, there may a room to improve the
+proposed control chart by incorporating the exponentially weighted moving average or the cumu-
+lative sum. Furthermore, an extensive study of comparing the performance of the existing control
+charts in a fair ground is necessary.
+Acknowledgements
+The authors are deeply thankful to the editor, two reviewers for their valuable suggestions to improve the quality of this
+manuscript. The author, Muhammad Aslam, therefore, acknowledges with thanks DSR for the technical support.
+Disclosure statement
+No potential conﬂict of interest was reported by the authors.
+Funding
+This article was funded by the Deanship of Scientiﬁc Research (DSR), King Abdulaziz University, Jeddah.
+References
+[1] L. Ahmad, M. Aslam, and C.-H. Jun, Designing of X-bar control charts based on process capability index using
+repetitive sampling, T. I. Meas. Control, 36(3) (2014), pp. 367–374.
+[2] S. Ahmad, M. Riaz, S.A. Abbasi, and Z. Lin, On efﬁcient median control charting, J. Chin. Inst. Eng. 37(3) (2014),
+pp. 358–375.
+[3] M. Aslam, M. Azam, and C.H. Jun, New attributes and variables control charts under repetitive sampling , Ind.
+Eng. Manage. Syst. 13(1) (2014), pp. 101–106.
+[4] M. Aslam, N. Khan, M. Azam, C.-H. Jun, Designing of a new monitoring T-chart using repetitive sampling ,I n f .
+Sci. 269 (2014), pp. 210–216.
+[5] M. Azam, M. Aslam, and C.-H. Jun, Designing of a hybrid exponentially weighted moving average control chart
+using repetitive sampling, Int. J. Adv. Manuf. Tech., 77 (2015), pp. 1927–1933.
+[6] S. Balamurali, C.-H. Jun, Repetitive group sampling procedure for variables inspection , J. Appl. Stat. 33 (2006),
+pp. 327–338.
+[7] G . Chen,The run length distributions of the R, S and S2 control charts when is estimated , Can. J. Stat. 26(2) (1998),
+pp. 311–322.
+[8] H.A. David, Early sample measures of variability , Stat. Sci. 13(4) (1998), pp. 368–377.
+[9] B. Guo and B.X. Wang, The design of the ARL-unbiased S2 chart when the in-control variance is estimated , Qual.
+Reliab. Eng. Int. 31 (2015), pp. 501–511.
+[10] H.J. Huang and F.L. Chen, A synthetic control chart for monitoring process dispersion with sample standard
+deviation, Comput. Ind. Eng. 49(2) (2005), pp. 221–240.
+[11] M.B. Khoo, A modiﬁed s chart for the process variance , Qual. Eng. 17(4) (2005), pp. 567–577.
+[12] M.B.C. Khoo, S2control chart based on double sampling , Int. J. Pure Ap. Mat. 13(2) (2004), pp. 249–258.
+[13] T.I. Kuo and P.H. Lee, Design of adaptive s control charts , J. Stat. Comput. Simul. 83(11) (2013), pp. 2002–2014.
+[14] H. Lee, M. Aslam, Q.U.A. Shakeel, W. Lee, and C.H. Jun,A control chart using an auxiliary variable and repetitive
+sampling for monitoring process mean , J. Stat. Comput. Simul. doi:10.1080/00949655.2014.970553.
+[15] P.H. Lee, Adaptive R charts with variable parameters , Comput. Stat. Data Anal. 55 (2011), pp. 2003–2010.
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+
+2496 M. Aslam et al.
+[16] P.H. Lee, Y .C. Chang, and C.C. Torng, A design of s control charts with combined double sampling and variable
+sampling interval scheme, Commun. Stat. A-Theor. 41 (2012), pp. 153–165.
+[17] M.A. Mahmoud, G .R. Henderson, E.K. Epprecht, and W.H. Woodall,Estimating the standard deviation in quality-
+control applications, J. Qual. Technol. 42(4) (2010), pp. 348–357.
+[18] D.C. Montgomery, Introduction to Statistical Quality Control, 6th ed., Wiley, New York, 2009.
+[19] A.C. Rakitzis and D.L. Antzoulakos, On the improvement of one-sided S control charts, J. Appl. Stat. 38(12) (2011),
+pp. 2839–2858.
+[20] M. Riaz, A dispersion control chart, Commun Stat B-Simul, 37(6) (2008), pp. 1239–1261.
+[21] M. Riaz and A. Saghir, A mean deviation-based approach to monitor process variability, J. Stat. Comput. Simul.
+79(10) (2009), pp. 1173–1193.
+[22] M. Schoonhoven, M. Riaz, and R.J. Does, Design and analysis of control charts for standard deviation with
+estimated parameters, J. Qual. Technol. 43(4) (2011), pp. 307–333.
+[23] R.E. Sherman, Design and evaluation of repetitive group sampling plan , Technometrics. 7 (1965), pp. 11–21.
+[24] R.F. Zafar, N. Abbas, M. Riaz, and Z. Hussain, Progressive variance control charts for monitoring process
+dispersion, Commun. Stat. A-Theor. 43(23) (2014), pp. 4893–4907.
+[25] G . Zhang, Improved R and s control charts for monitoring the process variance, J. Appl. Stat. 41(6) (2014), pp.
+1260–1273.
+[26] L. Zhang, M.S. Bebbington, C.D. Lai, and K. Govindaraju, On statistical design of the S2 control chart, Commun.
+Stat. A-Theor. 34(1) (2005), pp. 229–244.
+Downloaded by [79.170.55.162] at 01:25 18 September 2015 
+

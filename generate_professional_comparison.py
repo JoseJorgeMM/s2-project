@@ -52,44 +52,53 @@ for c in shifts:
 df = pd.DataFrame(results)
 
 # --- Visual Comparison (Plot) ---
+plt.rcParams['font.family'] = 'serif'
+plt.rcParams['font.serif'] = ['Times New Roman'] + plt.rcParams['font.serif']
+
 plt.figure(figsize=(10, 6), dpi=300)
-sns.set_style("whitegrid")
-sns.set_context("paper", font_scale=1.4)
+sns.set_style("whitegrid", {'font.family':'serif', 'font.serif':'Times New Roman'})
+sns.set_context("paper", font_scale=1.5)
 
 # Plotting on log scale for ARL
-plt.plot(df["Shift"], df["ARL_Proposed"], marker='o', linewidth=2.5, label='Nueva Carta Propuesta (Journal)', color='#1f77b4')
-plt.plot(df["Shift"], df["ARL_Optimized"], marker='s', linestyle='--', linewidth=2, label='Carta Optimizada (Local)', color='#ff7f0e')
-plt.plot(df["Shift"], df["ARL_Shewhart"], marker='^', linestyle=':', linewidth=2, label='Shewhart Tradicional', color='#d62728')
+plt.plot(df["Shift"], df["ARL_Proposed"], marker='o', markersize=8, linewidth=2.5, label='Proposed Repetitive $S^2$ (Paper)', color='#005EB8') # Royal Blue
+plt.plot(df["Shift"], df["ARL_Optimized"], marker='s', markersize=7, linestyle='--', linewidth=2, label='Optimized Repetitive $S^2$ (Local)', color='#E87722') # Dark Orange
+plt.plot(df["Shift"], df["ARL_Shewhart"], marker='^', markersize=8, linestyle=':', linewidth=2, label='Traditional Shewhart $S^2$', color='#C60C30') # Crimson
 
 plt.yscale('log')
-plt.xlabel('Desviación de la Varianza (c = $\sigma_1^2 / \sigma_0^2$)', fontweight='bold')
-plt.ylabel('ARL (Escala Logarítmica)', fontweight='bold')
-plt.title(f'Comparación Profesional de ARL (n={n}, $ARL_0 \\approx {ARL0_target}$)', fontsize=16, pad=20)
-plt.legend(frameon=True, shadow=True)
-plt.grid(True, which="both", ls="-", alpha=0.5)
+plt.xlabel('Process Variance Shift Ratio ($c = \sigma_1^2 / \sigma_0^2$)', fontsize=14, labelpad=10)
+plt.ylabel('Average Run Length (ARL)', fontsize=14, labelpad=10)
+plt.title(f'Performance Comparison of Reproductive $S^2$ Chart Designs\n($n={n}$, $ARL_0 \\approx {ARL0_target}$)', fontsize=16, pad=20)
+plt.legend(frameon=True, shadow=False, loc='upper right', fontsize=12)
+plt.grid(True, which="both", ls="-", alpha=0.3)
+
+# Add horizontal line for ARL0
+plt.axhline(y=ARL0_target, color='gray', linestyle='--', alpha=0.5)
+plt.text(1.05, ARL0_target * 1.1, f'$ARL_0 = {ARL0_target}$', color='gray', fontsize=10)
 
 # Tight layout and save
 plt.tight_layout()
 plot_path = os.path.join("outputs", "arl_comparison_q1.png")
-plt.savefig(plot_path)
+plt.savefig(plot_path, bbox_inches='tight')
 print(f"Plot saved to: {plot_path}")
 
 # --- Journal Style Table Generation ---
-print("\n--- JOURNAL STYLE TABLE ---")
-print("| c | Nueva Propuesta (Aslam) | Optimizada (Aslam) | Shewhart |")
-print("|---|:---:|:---:|:---:|")
+print("\n--- JOURNAL QUALITY COMPARISON TABLE ---")
+print("| Shift (c) | Proposed (Aslam) | Optimized (Local) | Shewhart | % Improvement |")
+print("|:---:|:---:|:---:|:---:|:---:|")
 for _, row in df.iterrows():
-    print(f"| {row['Shift']:.1f} | {row['ARL_Proposed']:8.2f} | {row['ARL_Optimized']:8.2f} | {row['ARL_Shewhart']:8.2f} |")
+    improvement = ((row['ARL_Shewhart'] - row['ARL_Proposed']) / row['ARL_Shewhart']) * 100 if row['Shift'] > 1.0 else 0
+    print(f"| {row['Shift']:.1f} | {row['ARL_Proposed']:8.2f} | {row['ARL_Optimized']:8.2f} | {row['ARL_Shewhart']:8.2f} | {improvement:6.1f}% |")
 
-# Save table to a text file for easy copy-pasting
+# Save table to a markdown file for the manuscript
 table_path = os.path.join("outputs", "arl_table_q1.md")
 with open(table_path, "w") as f:
-    f.write("# Tabla de Comparación ARL (Calidad Q1)\n\n")
-    f.write(f"Parámetros: n={n}, ARL0={ARL0_target}\n\n")
-    f.write("| c | Nueva Propuesta (Paper) | Optimizada (Local) | Shewhart | % Mejora |\n")
-    f.write("|---|:---:|:---:|:---:|:---:|\n")
+    f.write("# ARL Performance Comparison (Journal Standard)\n\n")
+    f.write(f"Parameters: Subgroup size $n={n}$, Target In-control $ARL_0={ARL0_target}$\n\n")
+    f.write("| Variance Shift ($c$) | Proposed (Paper) | Optimized (Local) | Shewhart | % Improvement |\n")
+    f.write("|:---:|:---:|:---:|:---:|:---:|\n")
     for _, row in df.iterrows():
-        mejora = ((row['ARL_Shewhart'] - row['ARL_Proposed']) / row['ARL_Shewhart']) * 100 if row['Shift'] > 1.0 else 0
-        f.write(f"| {row['Shift']:.1f} | {row['ARL_Proposed']:8.2f} | {row['ARL_Optimized']:8.2f} | {row['ARL_Shewhart']:8.2f} | {mejora:6.1f}% |\n")
+        improvement = ((row['ARL_Shewhart'] - row['ARL_Proposed']) / row['ARL_Shewhart']) * 100 if row['Shift'] > 1.0 else 0
+        mark = "**" if row['Shift'] == 1.5 or row['Shift'] == 2.0 else ""
+        f.write(f"| {mark}{row['Shift']:.1f}{mark} | {row['ARL_Proposed']:8.2f} | {row['ARL_Optimized']:8.2f} | {row['ARL_Shewhart']:8.2f} | {improvement:6.1f}% |\n")
 
 print(f"Markdown table saved to: {table_path}")
